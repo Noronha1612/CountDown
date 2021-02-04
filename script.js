@@ -1,9 +1,12 @@
-const today = new Date(Date.now());
+let now = new Date();
+let start = new Date(now.getFullYear(), 0, 0);
+let diff = now - start;
+let oneDay = 1000 * 60 * 60 * 24;
 
-let days = 8;
-let hours = 23;
-let minutes = 55;
-let seconds = 41;
+let days = 365 - Math.floor(diff / oneDay);
+let hours = 23 - now.getHours();
+let minutes = 59 - now.getMinutes();
+let seconds = 60 - now.getSeconds();
 
 const htmlDays = document.querySelector('#days');
 const htmlHours = document.querySelector('#hours');
@@ -23,10 +26,10 @@ const updateClock = () => {
         return;
     }
 
-    if ( seconds === 1 ) {
-        seconds = 60;
-        if( minutes == 1 ) {
-            minutes = 60;
+    if ( seconds === 0 ) {
+        seconds = 59;
+        if( minutes == 0 ) {
+            minutes = 59;
             if ( hours == 0 ) {
                 hours = 23;
                 days--;
