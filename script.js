@@ -52,3 +52,5 @@ const formatNumber = (number) => {
 
     return numberString.length == 1 ? `0${numberString}` : numberString;
 }
+
+setUpdatedClock();
