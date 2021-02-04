@@ -1,0 +1,191 @@
+h1 {
+    text-transform: uppercase;
+    transform: translateY(-80px);
+
+    color: var(--color-white);
+    letter-spacing: 8px;
+    font-size: 24px;
+    font-weight: 700;
+
+    text-align: center;
+
+    padding: 20px;
+
+    margin-bottom: 80px;
+}
+
+footer {
+    position: fixed;
+    bottom: 40px;
+
+    z-index: 100;
+}
+
+footer a + a {
+    cursor: pointer;
+
+    margin-left: 18px;
+}
+
+footer a svg path {
+    transition: .5s;
+}
+
+footer a svg:hover path {
+    fill: #f25e80;
+}
+
+.main-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 20px;
+    transform: translateY(-80px);
+    
+    z-index: 200;
+}
+
+.main-content .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100px;
+}
+
+.main-content .card .content {
+    position: relative;
+
+    background: #34364f;
+    border-radius: 8px;
+
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 50px;
+    font-weight: 700;
+    color: #fc5d86;
+    
+    z-index: 200;
+    overflow: hidden;
+}
+
+.main-content .card::before {
+    content: '';
+
+    position: absolute;
+    bottom: 30%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+
+    width: 100%;
+    height: 20px;
+    background: #1a1a24;
+    border-radius: 8px;
+}
+
+.main-content .card .content .divisor {
+    content: '';
+    position: absolute;
+    top: 0;
+
+    width: 100%;
+    height: 50%;
+
+    background: rgba(0, 0, 0, .2);
+    border-bottom: .2px solid rgba(0, 0, 0, 0.041);
+}
+
+.main-content .card .content .divisor::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translate(-50%, 50%);
+
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+
+    background: #000;
+}
+
+
+.main-content .card .content .divisor::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translate(50%, 50%);
+
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+
+    background: #000;
+}
+
+.main-content .card .description {
+    text-transform: uppercase;
+    color: #8585a1;
+    font-weight: 500;
+    letter-spacing: 4px;
+    font-size: 14px;
+}
+
+@media (min-width: 900px) {
+
+    .main-content .card {
+        width: 150px;
+    }
+
+    .main-content .card .content {
+        width: 150px;
+        height: 150px;
+        font-size: 70px;
+        margin-bottom: 40px;
+    }
+
+    .main-content .card .description {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 520px) {
+    .main-content {
+        grid-template-columns: 1fr 1fr;
+        column-gap: 30px;
+        row-gap: 40px;
+    }
+}
+
+@media (max-width: 300px) {
+    h1 {
+        margin-bottom: 20px;
+    }
+
+    .main-content {
+        grid-template-columns: 1fr;
+        row-gap: 20px;
+        column-gap: 0;
+    }
+
+    .main-content .card {
+        width: 80px;
+    }
+
+    .main-content .card .content {
+        width: 80px;
+        height: 80px;
+        font-size: 36px;
+        margin-bottom: 12px;
+    }
+
+    .main-content .card .description {
+        font-size: 12px;
+    }
+}

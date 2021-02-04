@@ -1,0 +1,37 @@
+.main {
+    background: linear-gradient(
+        #1E1E28,
+        #251D2B
+    );
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main::before {
+    position: absolute;
+    display: block;
+    content: '';
+
+    background: url('../images/bg-stars.svg');
+
+    width: 100%;
+    height: 100%;
+}
+
+.background-hills {
+    background: url('../images/pattern-hills.svg');
+    background-size: cover;
+    
+    width: 100%;
+    height: 200px;
+    
+    position: absolute;
+    bottom: 0;
+}
